@@ -2,79 +2,77 @@
 // Created by Catalina Domínguez on 4/2/18.
 //
 
-#include "Peso.h"
 #include "Dolar.h"
+#include "Peso.h"
 
-Peso::Peso() {
-    this->mxn = 0;
+Dolar::Dolar() {
+    this->dls = 0;
 }
 
-Peso::Peso(double mxn){
-    this->mxn=mxn;
+Dolar::Dolar(double dls){
+    this->dls=dls;
 }
 
-Peso operator + (const Peso &p1, const Peso &p2){
-    Peso totalmxn;
-    totalmxn = p1.mxn + p2.mxn;
-    return totalmxn;
+Dolar operator + (const Dolar &n1, const Dolar &n2){
+    Dolar totaldls;
+    totaldls = n1.dls + n2.dls;
+    return totaldls;
 }
 
-Peso operator - (const Peso &p1, const Peso &p2){
-    Peso totalmxn;
-    totalmxn = p1.mxn - p2.mxn;
-    return totalmxn;
+Dolar operator - (const Dolar &n1, const Dolar &n2){
+    Dolar totaldls;
+    totaldls = n1.dls - n2.dls;
+    return totaldls;
 }
 
-/*
-Peso operator + (const Dolar &p1, const Peso &p2){
-    Peso totalmxn;
-    totalmxn.mxn = ((p1.dls * 18.5) + p2.mxn);
-    return totalmxn;
-}
- */
+/*Dolar operator + (const Peso &n1, const Dolar &n2){
+    Dolar totaldls;
+    totaldls.dls = ((n1.mxn / 18.5) + n2.dls);
+    return totaldls;
+}*/
 
-Peso operator + (const Peso &p1, const Dolar &p2){
-    Peso totalmxn;
-    totalmxn.mxn = (p1.mxn + (p2.dls * 18.5));
-    return totalmxn;
+Dolar operator + (const Dolar &n1, const Peso &n2){
+    Dolar totaldls;
+    totaldls.dls = (n1.dls + (n2.mxn / 18.5));
+    return totaldls;
 }
 
-bool operator < (const Peso &p1, const Peso &p2){
-    bool res = (p1 < p2);
+bool operator < (const Dolar &n1, const Dolar &n2){
+    bool res = (n1 < n2);
     return res;
     //True
 }
 
-bool operator > (const Peso &p1, const Peso &p2){
-    bool res = (p1 > p2);
+bool operator > (const Dolar &n1, const Dolar &n2){
+    bool res = (n1 > n2);
     return res;
     //True
 }
 
-bool operator <= (const Peso &p1, const Peso &p2){
-    bool res = (p1 <= p2);
+bool operator <= (const Dolar &n1, const Dolar &n2){
+    bool res = (n1 <= n2);
     return res;
     //True
 }
 
-bool operator >= (const Peso &p1, const Peso &p2){
-    bool res = (p1 >= p2);
+bool operator >= (const Dolar &n1, const Dolar &n2){
+    bool res = (n1 >= n2);
     return res;
     //True
 }
 
-bool operator == (const Peso &p1, const Peso &p2){
-    bool res = (p1 == p2);
+bool operator == (const Dolar &n1, const Dolar &n2){
+    bool res = (n1 == n2);
     return res;
     //True
 }
 
-bool operator != (const Peso &p1, const Peso &p2){
-    bool res = (p1 != p2);
+bool operator != (const Dolar &n1, const Dolar &n2){
+    bool res = (n1 != n2);
     return res;
     //True
 }
 
-std::string Peso::to_String() {
-    return "$" + std::to_string(mxn) + " MXN";
+std::string Dolar::to_String() {
+    return "$" + std::to_string(dls) + " USD";
 }
