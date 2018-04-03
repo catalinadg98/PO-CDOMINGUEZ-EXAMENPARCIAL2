@@ -5,11 +5,14 @@
 #ifndef PO_CDOMINGUEZ_EXAMENPARCIAL2_DOLAR_H
 #define PO_CDOMINGUEZ_EXAMENPARCIAL2_DOLAR_H
 #include <iostream>
+#include "Peso.h"
 
 class Dolar {
 
     friend Dolar operator + (const Dolar &n1, const Dolar &n2);
     friend Dolar operator - (const Dolar &n1, const Dolar &n2);
+    //friend Dolar operator + (const Peso &n1, const Dolar &n2);
+    friend Dolar operator + (const Dolar &n1, const Peso &n2);
     friend bool operator < (const Dolar &n1, const Dolar &n2);
     friend bool operator > (const Dolar &n1, const Dolar &n2);
     friend bool operator <= (const Dolar &n1, const Dolar &n2);
